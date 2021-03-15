@@ -1,5 +1,5 @@
 # kaggle-indoor
-Indoor Location and Naviagtion(https://www.kaggle.com/c/indoor-location-navigation)用のリポジトリ  
+Indoor Location and Naviagtion (https://www.kaggle.com/c/indoor-location-navigation) 用のリポジトリ  
 
 - Directory tree
 ```
