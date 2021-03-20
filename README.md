@@ -36,3 +36,14 @@ TBD.
 - indoor-unified-wifi-dsは色々データあるなかで、wifiの強度に関して集計しれくれたやつっぽい
 - あるユーザーがあるwaypointにいるとき、WiFiの強度(rrsi？みたいなやつ)が近い順にcolumnsに並べて、そのユニークなidと強度がどんくらいかを示している あとfloorとかも乗ってる
 - 次回は実際にkoukiさんdataset & notebook を見ながらハンズオン的な感じでとりあえずデータ見る＆動かしてみる ってことをしたい
+
+## 20120320
+- koukiさんデータセット読み込んで、前処理とネットワーク写した
+- BSSIDとsite_idをembedd、RSIIをLinearかけて、それら全部を横に結合して、さらにLinearかけてLSTMに入れてるっぽい
+- LSTMは(1, batch_size, num_features)をinputにしてる
+- 真ん中のとこが時系列の要素になってるっぽい(多分........)
+- BSSIDの時系列の変化を見ることで、暗黙的にpathごとの変化を学習してる的な感じなのかなと思った
+- でもpathごとにミニバッチにして、(new_batch_size, path_batch_size, features)にした方がよりpathに沿った時系列の変化を学習できるのではという気がする
+- 一回元のコード通りに書いてやってみたあと、上のやつを試してみたいなあとは思う
+- 次回は学習、評価までやってみたい あとディスカッションにあった神postprocessingも試したい
+
