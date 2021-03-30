@@ -26,8 +26,13 @@ TBD.
 # Dataset
 | Dataset  |  Description  | Ref |
 | ---- | ---- | ---- |
-|  indoor-unified-wifi-ds  |  koukiさんの作った神データセット たぶんWiFiのみについて集計がしてある  | |
+|  indoor-unified-wifi-ds  |  koukiさんの作った神データセット たぶんWiFiのみについて集計がしてある  |  |
 
+
+# Notebook
+| Notebook  |  Description  | Ref |
+| ---- | ---- | ---- |
+|  EXP001  |  koukiさんの作ったデータセットとnotebook + Cost Minimization のBaseline  |indoor-unified-wifi-ds |
 
 # Logs
 ## 20210315
@@ -54,3 +59,11 @@ TBD.
 - でも普通に考えてRAMのほうのメモリが増大してくのは何かtrainingの書き方に何かしらか問題がある気がする
 - epochsごとに無限にデータフレーム作っちゃってるとかデータを格納してるdictの中身が無限に増えてくとか、そういう感じ＞
 - 次回そこを検証してとりあえずちゃんと学習を終わらせられるようにしたい
+
+## 20210331
+- いろいろメモリ効率とか学習速度とか改善した
+- 5foldで15epochsくらいにしたら結構すぐ学習終わるようになった 定時後に回して深夜におわるレベル
+- kouki-sanのやつ + Post-processing by Cost Minimization (https://www.kaggle.com/saitodevel01/indoor-post-processing-by-cost-minimization) をとりあえず完コピした
+- CV?的なmean position error：192.2107121781046 で LB 5.986 だった
+- baselineができたので次はpathごとにミニバッチにするとかいろいろしたい
+- なおまだ理解ちゃんとできてない箇所も多いからとりあえずコピったとこはちゃんと理解するとこから始めたい
